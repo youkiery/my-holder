@@ -14,7 +14,7 @@ if (!defined('NV_SYSTEM') and !defined('NV_ADMIN') and !defined('NV_WYSIWYG')) {
     exit();
 }
 
-error_reporting(0);
+error_reporting(1);
 
 define('NV_MAINFILE', true);
 
