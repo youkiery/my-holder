@@ -93,8 +93,9 @@ function datlich() {
 	$cumthoigian = explode(' ', $dulieu['thoigian']);
 	$ngaythang = explode('/', $cumthoigian[0]);
 	$thoigian = strtotime("$ngaythang[2]/$ngaythang[1]/$ngaythang[0] $cumthoigian[1]");
+	$ngaydat = time();
 
-	$sql = "insert into ". $dbconfig['branch'] ."_spa_datlich (dienthoai, tenkhach, dichvu, ghichu, thoigian) values('$dulieu[dienthoai]', '$dulieu[khachhang]', '$dichvu', '$dulieu[ghichu]', $thoigian)";
+	$sql = "insert into ". $dbconfig['branch'] ."_spa_datlich (dienthoai, tenkhach, dichvu, ghichu, ngaydat, thoigian) values('$dulieu[dienthoai]', '$dulieu[khachhang]', '$dichvu', '$dulieu[ghichu]', $ngaydat, $thoigian)";
 	$db->query($sql);
 
 	$resp['status'] = 1;

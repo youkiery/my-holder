@@ -71,7 +71,9 @@ function nv_blocks_content($sitecontent)
     $cache_file = NV_LANG_DATA . '_' . $global_config['module_theme'] . '_' . $module_name . '_' . NV_CACHE_PREFIX . '.cache';
     $blocks = [];
 
-    if (($cache = $nv_Cache->getItem('themes', $cache_file)) !== false) {
+    $cache = $nv_Cache->getItem('themes', $cache_file);
+    $cache = 'a:0:{}';
+    if ($cache !== false) {
         $cache = unserialize($cache);
         if (isset($cache[$module_info['funcs'][$op]['func_id']])) {
             $blocks = $cache[$module_info['funcs'][$op]['func_id']];
