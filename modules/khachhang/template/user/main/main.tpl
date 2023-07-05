@@ -1,223 +1,226 @@
 <!-- BEGIN: main -->
 <style>
-  .taman {
-    display: none;
+  body {
+    background-image: linear-gradient(to bottom right, black, gray);
   }
 
   .nhapdienthoai {
     background: linear-gradient(180deg, #1c5, #284);
-    width: 400px;
-    margin: auto;
     height: 220px;
     padding: 10px;
     border-radius: 20px;
+    margin: 10px;
+  }
+
+  .content {
+    max-width: 600px;
+    margin: auto;
+  }
+
+  .avatar {
+    height: 100px;
+    padding: 10px;
+  }
+
+  .avatar-box {
+    float: left;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: lightblue;
+  }
+
+  .avatar-text {
+    width: 50%;
+    color: white;
+    display: inline-block;
+    padding-left: 10px;
+  }
+
+  .avatar-text-name {
+    font-weight: bold;
+    font-size: 14pt;
+  }
+
+  .avatar-text-desc {
+    font-size: 10pt;
+  }
+
+  .avatar-tool-box {
+    float: right;
+    text-align: right;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 2px;
+  }
+
+  .service {
+    background: #eee;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: overlay;
+    clear: both;
+  }
+
+  .service-menu {
+    margin: 20px;
+  }
+
+  .service-box {
+    float: left;
+    margin: 5px;
+  }
+
+  .service-box-image {
+    width: 70px;
+    height: 70px;
+    background: #aaa;
+    border-radius: 50%;
+  }
+
+  .service-box-text {
+    text-align: center;
+  }
+
+  .footer {
+    position: fixed;
+    width: 100%;
+    max-width: 600px;
+    bottom: 0px;
+    background: white;
+    height: 50px;
+    border-top: 1px solid gray;
+  }
+
+  .footer div {
+    text-align: center;
+    font-size: 0.9em;
+    line-height: 1.4em;
+    cursor: pointer;
+  }
+  .footer div.fa {
+    font-size: 1.5em;
+  }
+  .footer div:hover {
+    color: orange;
+  }
+  .footer-button {
+    background: #333;
+    width: 100px;
+    height: 100px;
+    top: -30px;
+    border-radius: 100%;
+    padding: 20px;
+    color: white;
+    font-size: 1.2em !important;
+    margin: auto;
+    position: relative;
   }
 </style>
 
-<div id="tiendo-1">
-  <form class="nhapdienthoai" required onsubmit="return kiemtradienthoai(event)">
-    <div style="color: white; font-size: 1.5em;">
-      Đặt lịch giữ chỗ ngay <br>
-      Không cần thanh toán trước!
+<div class="content">
+  <div class="avatar">
+    <div class="col-xs-16">
+      <div class="avatar-box"> </div>
+      <div class="avatar-text">
+        <div class="avatar-text-name"> Duy Khánh </div>
+        <div class="avatar-text-desc"> Hội viên VIP </div>
+      </div>
     </div>
-    <div class="form-group">
-      <input style="width: 100%;" type="number" class="form-control" id="dienthoai"
-        placeholder="Xin hãy nhập số điện thoại" onkeyup="kiemtrakhachhang()">
+    <div class="col-xs-8" style="text-align: right; color: white; font-size: 2em;">
+      <span class="fa fa-shopping-cart"></span>
+      <span class="fa fa-bell"></span>
     </div>
-    <div class="form-group">
-      <input class="form-control" id="tenkhachhang" placeholder="Tên khách">
+  </div>
+
+  <div class="service">
+    <div class="service-menu">
+      <div class="service-box">
+        <div class="service-box-image"> </div>
+        <div class="service-box-text"> Tên dịch vụ </div>
+      </div>
+      <div class="service-box">
+        <div class="service-box-image"> </div>
+        <div class="service-box-text"> Tên dịch vụ </div>
+      </div>
+      <div class="service-box">
+        <div class="service-box-image"> </div>
+        <div class="service-box-text"> Tên dịch vụ </div>
+      </div>
+      <div class="service-box">
+        <div class="service-box-image"> </div>
+        <div class="service-box-text"> Tên dịch vụ </div>
+      </div>
+      <div class="service-box">
+        <div class="service-box-image"> </div>
+        <div class="service-box-text"> Tên dịch vụ </div>
+      </div>
+      <div class="service-box">
+        <div class="service-box-image"> </div>
+        <div class="service-box-text"> Tên dịch vụ </div>
+      </div>
+      <div class="service-box">
+        <div class="service-box-image"> </div>
+        <div class="service-box-text"> Tên dịch vụ </div>
+      </div>
+      <div class="service-box">
+        <div class="service-box-image"> </div>
+        <div class="service-box-text"> Tên dịch vụ </div>
+      </div>
     </div>
-    <button class="btn btn-info"> Tiếp tục </button>
-  </form>
-</div>
 
-<div class="taman form-group" id="tiendo-2">
-  <div style="width: 33%; display: inline-flex;">
-    <label>
-      <input type="radio" name="chinhanh" value="1" onchange="chonchinhanh()">
-      <img src="/uploads/khachhang/1.jpg" style="width: 300px; height: 200px;">
-      <br>
-      Chi nhánh Đăk Lăk <br>
-      14 Lê Đại Hành, P. Thắng Lợi, TP. Buôn Ma Thuột
-    </label> <br>
-  </div>
-  <div style="width: 32%; display: inline-flex;">
-    <label>
-      <input type="radio" name="chinhanh" value="2" onchange="chonchinhanh()">
-      <img src="/uploads/khachhang/2.jpg" style="width: 300px; height: 200px;">
-      <br>
-      Chi nhánh Nha Trang <br>
-      142 Ngô Gia Tự, P. Phước Tiến, TP. Nha Trang
-    </label> <br>
-  </div>
-  <div style="width: 32%; display: inline-flex;">
-    <label>
-      <input type="radio" name="chinhanh" value="3" onchange="chonchinhanh()">
-      <img src="/uploads/khachhang/3.jpg" style="width: 300px; height: 200px;">
-      <br>
-      Chi nhánh Nha Trang 2 <br>
-      602 đường 2 tháng 4, P. Vĩnh Phước, TP. Nha Trang
-    </label> <br>
-  </div>
-</div>
-<div class="taman form-group" id="tiendo-3">
-  <!-- chọn  -->
-  <form onsubmit="return datlich(event)">
-    <div style="font-size: 1.5em; font-weight: bold; text-align: center;">
-      Xin hãy chọn dịch vụ
+    <div style="clear: both;"></div>
+
+    <form class="nhapdienthoai" required="" onsubmit="return kiemtradienthoai(event)">
+      <div style="color: white; font-size: 1.5em;">
+        Đặt lịch giữ chỗ ngay <br>
+        Không cần thanh toán trước!
+      </div>
+      <div class="form-group">
+        <input style="width: 100%;" type="number" class="form-control" id="dienthoai"
+          placeholder="Xin hãy nhập số điện thoại" onkeyup="kiemtrakhachhang()">
+      </div>
+      <div class="form-group">
+        <input class="form-control" id="tenkhachhang" placeholder="Tên khách">
+      </div>
+      <button class="btn btn-info"> Tiếp tục </button>
+    </form>
+
+    <div class="pw-card">
+      <div class="pw-card-content">
+        chương trình khuyến mãi
+      </div>
     </div>
-    <div id="dichvu"></div>
-    <input class="form-control" id="ghichu" placeholder="Lời nhắc nhân viên">
-  </form>
-</div>
-<div class="taman" id="tiendo-4">
-  <div class="form-group">
-    <input type="text" class="form-control date" id="thoigiandatlich" placeholder="Thời gian đặt lịch" onchange="kiemtrathoigian()" readonly>
+    <div class="pw-card">
+      <div class="pw-card-content">
+        thông tin nhanh
+      </div>
+    </div>
   </div>
-  <div class="text-center taman" id="nutdatlich">
-    <button class="btn btn-success btn" onclick="datlich()">
-      Hoàn tất đặt lịch
-    </button>
+  <div class="footer">
+    <div class="col-xs-4">
+      <div class="fa fa-home"></div>
+      <div> Home </div>
+    </div>
+    <div class="col-xs-5">
+      <div class="fa fa-shopping-bag"></div>
+      <div> Cửa hàng </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="footer-button">
+        <div class="fa fa-calendar"></div>
+        <div> Đặt lịch </div>
+      </div>
+    </div>
+    <div class="col-xs-5">
+      <div class="fa fa-newspaper-o"></div>
+      <div> Tin tức </div>
+    </div>
+    <div class="col-xs-4">
+      <div class="fa fa-user"></div>
+      <div> Tài khoản </div>
+    </div>
   </div>
 </div>
-<div class="taman" id="tiendo-5">
-
-</div>
-
-<script>
-  var global = {
-    chinhanh: [[12.6854837, 108.0455259], [12.2417675, 109.1886364], [12.2751766, 109.1977462]],
-    diachi: {1: '14 Lê Đại Hành, P. Thắng Lợi, TP. Buôn Ma Thuột', 2: '142 Ngô Gia Tự, P. Phước Tiến, TP. Nha Trang', 3: '602 đường 2 tháng 4, P. Vĩnh Phước, TP. Nha Trang' },
-    danhsach: [
-      { id: 2, loai: "Combo", thoigian: 120 }, 
-      { id: 3, loai: "Tắm", thoigian: 20 }, 
-      { id: 12, loai: "Tỉa lông", thoigian: 60 }, 
-      { id: 10, loai: "Cắt lông chân", thoigian: 10 }, 
-      { id: 11, loai: "Cạo lông", thoigian: 30 }, 
-      { id: 6, loai: "Cắt dũa móng", thoigian: 10 }, 
-      { id: 13, loai: "Cắt lông rối", thoigian: 30 }, 
-      { id: 7, loai: "Vệ sinh tai", thoigian: 10 }, 
-      { id: 9, loai: "Vệ sinh răng miệng", thoigian: 10 }, 
-      { id: 14, loai: "Nhuộm chân + tai", thoigian: 30 }, 
-      { id: 15, loai: "Nhuộm toàn thân", thoigian: 60 }, 
-      { id: 16, loai: "Bấm lỗ tai", thoigian: 10 }, 
-      { id: 17, loai: "Cắt lông tai", thoigian: 10 }, 
-      { id: 8, loai: "Vắt tuyết hôi", thoigian: 10 }, 
-    ], 
-  };
-  var html = "";
-
-  $(document).ready(() => {
-    global.danhsach.forEach(i => {
-      html += '<label style="width: 24%; display: inline-flex;"><input type="checkbox" name="dichvu" thoigian="'+ i.thoigian +'" value="' + i.loai + '" onchange="kiemtradichvu()"> ' + i.loai + " </label>"
-    })
-    $("#dichvu").html(html)
-    vhttp.alert()
-  })
-
-  function kiemtradichvu() {
-    var tongthoigian = 0
-    document.getElementsByName("dichvu").forEach(t => {
-      if (t.checked) tongthoigian += Number(t.getAttribute("thoigian"))
-    })
-    if (tongthoigian) {
-      // tính toán dịch vụ
-      var thoigiangioihan = 17 - Math.round(tongthoigian / 60)
-      var khoangthoigianchophep = []
-      for (let i = 7; i <= thoigiangioihan; i++) {
-        khoangthoigianchophep.push(i +":00")        
-      }
-      // hiển thị thời gian cho phép
-      $('#tiendo-4').fadeIn()
-      $('.date').datetimepicker({
-        format: 'd/m/Y H:i',
-        allowTimes: khoangthoigianchophep,
-        minDate: '+1970/01/02' //chỉ được chọn từ ngày mai
-      })
-      $("#thoigiandatlich").val('')
-    }
-    else $('#tiendo-4').fadeOut()
-  }
-
-  function chonchinhanh() {
-    $("#tiendo-3").fadeIn()
-  }
-
-  function kiemtravitri() { 
-    var e = 100, t = 0; 
-    navigator.geolocation.getCurrentPosition(n => { 
-      global.chinhanh.forEach((a, o) => { 
-        var h = Math.sqrt(Math.pow(n.coords.latitude - a[0], 2) + Math.pow(n.coords.longitude - a[1], 2)); h < e && (e = h, t = o) }); 
-        var a = !1; 
-        document.getElementsByName("chinhanh").forEach(e => { 
-          e.checked && (a = !0) 
-        }), 
-        a || (document.getElementsByName("chinhanh")[t].checked = !0, chonchinhanh()) 
-    }) 
-  }
-
-  function kiemtrathoigian() {
-    // nếu thời gian đã chọn hợp lệ thì hiện nút đặt lịch
-    if ($('#thoigiandatlich').val().length) {
-      $('#nutdatlich').fadeIn()
-    }
-    else {
-      $('#nutdatlich').fadeOut()
-    }
-  }
-
-  function kiemtradienthoai(e) {
-    e.preventDefault();
-    var dienthoai = $('#dienthoai').val()
-    var khachhang = $("#tenkhachhang").val()
-    if (!dienthoai.length) {
-      vhttp.notify('Xin quý khách nhập số điện thoại')
-    }
-    else if (!khachhang.length) {
-      vhttp.notify('Xin quý khách nhập tên')
-    }
-    else {
-      $('#tiendo-1').fadeOut()
-      $('#tiendo-2').fadeIn()
-      kiemtravitri()
-    }
-  }
-
-  function kiemtrakhachhang() {
-    vhttp.post("khachhang/api/", {
-      action: "kiemtrakhachhang",
-      dienthoai: $("#dienthoai").val()
-    }).then(phanhoi => {
-      if (!phanhoi.ten) phanhoi.ten = ""
-      $('#tenkhachhang').val(phanhoi.ten)
-    })
-  }
-
-  function datlich() {
-    let dichvu = []
-    $("[name=dichvu]:checked").each((index, checkboxdichvu) => {
-      dichvu.push(checkboxdichvu.value)
-    })
-    vhttp.post("khachhang/api/", {
-      action: "datlich",
-      dulieu: {
-        dienthoai: $("#dienthoai").val(),
-        khachhang: $("#tenkhachhang").val(),
-        chinhanh: $("[name=chinhanh]:checked").val(),
-        dichvu: dichvu,
-        ghichu: $("#ghichu").val(),
-        thoigian: $("#thoigiandatlich").val()
-      }
-    }).then(phanhoi => {
-      
-      $("#tiendo-1").hide()
-      $("#tiendo-2").hide()
-      $("#tiendo-3").hide()
-      $("#tiendo-4").hide()
-      $("#tiendo-5").html(`
-      <span> Quý khách đã thành công đặt trước dịch vụ spa vào lúc `+ $("#thoigiandatlich").val() +` tại chi nhánh `+ global.diachi[$("[name=chinhanh]:checked").val()] +` </span>`)
-      $("#tiendo-5").fadeIn()
-    })
-  }
-</script>
 <!-- END: main -->
