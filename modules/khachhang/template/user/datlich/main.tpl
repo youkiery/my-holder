@@ -1,19 +1,5 @@
 <!-- BEGIN: main -->
-<style>
-  .taman {
-    display: none;
-  }
-
-  .nhapdienthoai {
-    background: linear-gradient(180deg, #1c5, #284);
-    width: 400px;
-    margin: auto;
-    height: 220px;
-    padding: 10px;
-    border-radius: 20px;
-  }
-</style>
-
+{header}
 <div id="tiendo-1">
   <form class="nhapdienthoai" required onsubmit="return kiemtradienthoai(event)">
     <div style="color: white; font-size: 1.5em;">
@@ -80,9 +66,8 @@
     </button>
   </div>
 </div>
-<div class="taman" id="tiendo-5">
-
-</div>
+<div class="taman" id="tiendo-5"></div>
+{footer}
 
 <script>
   var global = {

@@ -12,6 +12,8 @@ if (!defined('NV_IS_FORM')) {
 }
 
 $xtpl = new XTemplate("main.tpl", PATH .'/main/');
+$xtpl->assign("header", chenheader());
+$xtpl->assign("footer", chenfooter());
 $xtpl->parse("main");
 $contents = $xtpl->text();
 

@@ -11,39 +11,19 @@ if (!defined('PREFIX')) {
   die('Stop!!!');
 }
 
-$buy_sex = array('Sao cũng được', 'Đực', 'Cái');
-
 define('GIOIHAN', 12);
-
-function danhsachthucung() {
+function chenfooter() {
   global $db, $nv_Request, $module_file;
 
-  $xtpl = new XTemplate("danhsachthucung.tpl", PATH .'/main/');
+  $xtpl = new XTemplate("footer.tpl", PATH);
+  $xtpl->parse("main");
+  return $xtpl->text();
+}
 
-  $tukhoa = $nv_Request->get_string('tukhoa', 'post', '');
-  $trang = $nv_Request->get_string('trang', 'post', '1');
-  if (empty($tukhoa)) $xtra = "";
-  else $xtra = " where c.ten like '%$tukhoa%' or c.dienthoai like '%$tukhoa%' or b.micro like '%$tukhoa%'";
+function chenheader() {
+  global $db, $nv_Request, $module_file;
 
-  // gom tất cả idthucung lại, sort theo thời gian
-  $sql = "select a.id, b.ten, b.id as idthucung, b.idgiong, c.ten as chuho, b.hinhanh, b.micro from ". PREFIX ."_tiemphong a inner join ". PREFIX ."_tiemphong_thucung b on a.idthucung = b.id inner join ". PREFIX ."_tiemphong_chuho c on b.idchu = c.id $xtra group by idthucung order by thoigiantiem desc, a.id desc limit ". GIOIHAN . " offset ". ($trang - 1) * GIOIHAN;
-  $danhsach = $db->all($sql);
-  $sql = "select count(a.id) as tongtruong from ". PREFIX ."_tiemphong a inner join ". PREFIX ."_tiemphong_thucung b on a.idthucung = b.id inner join ". PREFIX ."_tiemphong_chuho c on b.idchu = c.id $xtra";
-  if (empty($tong = $db->fetch($sql))) $tong = 0;
-  else $tong = $tong['tongtruong'];
-
-  foreach ($danhsach as $thucung) {
-    $hinhanh = kiemtrahinhanh($thucung['hinhanh']);
-    $xtpl->assign('id', $thucung['idthucung']);
-    $xtpl->assign('image', $hinhanh);
-    $xtpl->assign('name', $thucung['ten']);
-    $xtpl->assign('micro', $thucung['micro']);
-    $xtpl->assign('chuho', $thucung['chuho']);
-    $xtpl->assign('species', laytengiongloai($thucung['idgiong']));
-    $xtpl->parse("main.thucung");
-  }
-  
-  $xtpl->assign('danhsachtrang', phantrang($trang, $tong, GIOIHAN, 'dentrang'));
+  $xtpl = new XTemplate("header.tpl", PATH);
   $xtpl->parse("main");
   return $xtpl->text();
 }
