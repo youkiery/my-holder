@@ -43,6 +43,35 @@ body {
   margin: 0px 10px;
 }
 
+.lefto {
+  padding-left: 11px;
+  border-left: 1px solid gray;
+  border-bottom-left-radius: 50px;
+}
+
+.step {
+  margin-left: -20px;
+}
+
+.step::before {
+  content: "---";
+  border-radius: 50%;
+  color: gray;
+  background-color: gray;
+}
+
+.step.active::before {
+  color: #5cb85c;
+  background-color: #5cb85c;
+}
+
+#thoigiandatlich {
+  background: white;
+}
+#thoigiandatlich:disabled {
+  background: #eee;
+}
+
 .content {
   max-width: 600px;
   margin: auto;

@@ -16,6 +16,7 @@ $resp = array(
   'status' => 0
 );
 
+
 if (!empty($action) && function_exists($action)) {
   $action();
 }
@@ -38,7 +39,7 @@ function kiemtrakhachhang() {
 function datlich() {
   global $nv_Request, $resp;
 
-	$dbconfig = [1 => [
+	$dbconfig = [0 => [
 		"dbhost" => '127.0.0.1',
 		"dbport" => '',
 		"dbname" => 'phc',

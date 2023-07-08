@@ -2,8 +2,10 @@
 </div>
 <div class="footer">
   <div class="col-xs-4">
-    <div class="fa fa-home"></div>
-    <div> Home </div>
+    <a href="/">
+      <div class="fa fa-home"></div>
+      <div> Home </div>
+    </a>
   </div>
   <div class="col-xs-5" onclick="dangbaotri()">
     <div class="fa fa-shopping-bag"></div>
@@ -21,9 +23,11 @@
     <div class="fa fa-newspaper-o"></div>
     <div> Tin tức </div>
   </div>
-  <div class="col-xs-4" onclick="dangbaotri()">
-    <div class="fa fa-user"></div>
+  <div class="col-xs-4">
+    <a href="/users/login">
+      <div class="fa fa-user"></div>
     <div> Tài khoản </div>
+    </a>
   </div>
 </div>
 </div>
