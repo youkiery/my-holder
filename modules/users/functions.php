@@ -15,8 +15,6 @@ if (!defined('NV_SYSTEM')) {
 
 define('NV_IS_MOD_USER', true);
 define('NV_MOD_TABLE', ($module_data == 'users') ? NV_USERS_GLOBALTABLE : $db_config['prefix'] . '_' . $module_data);
-define("PREFIX", $db_config['prefix']);
-define("PATH", NV_ROOTDIR . '/modules/' . $module_file . '/template/user/');
 
 $lang_module['in_groups'] = $lang_global['in_groups'];
 require NV_ROOTDIR . '/modules/' . $module_file . '/global.functions.php';
@@ -68,9 +66,8 @@ function validUserLog($array_user, $remember, $oauth_data, $current_mode = 0)
     $stmt->bindValue(':last_agent', NV_USER_AGENT, PDO::PARAM_STR);
     $stmt->bindValue(':opid', $opid, PDO::PARAM_STR);
     $stmt->execute();
-    $live_cookie_time = ($remember) ? NV_LIVE_COOKIE_TIME : 0;
 
-    $nv_Request->set_Cookie('nvloginhash', json_encode($user), $live_cookie_time);
+    NukeViet\Core\User::set_userlogin_hash($user, $remember);
 
     if (!empty($global_users_config['active_user_logs'])) {
         $log_message = $opid ? ($lang_module['userloginviaopt'] . ' ' . $oauth_data['provider']) : $lang_module['st_login'];
@@ -320,15 +317,4 @@ if (defined('NV_IS_USER') and isset($array_op[0]) and isset($array_op[1]) and ($
             }
         }
     }
-}
-
-
-function laybanner() {
-    global $db;
-  
-    $sql = "select * from ". PREFIX ."_config where module = 'global' and config_name = 'site_banner'";
-    $hinhanh = $db->fetch($sql);
-    if (empty($hinhanh)) return NV_ROOTDIR . '/assets/images/noimage.png';
-    if (strpos('http', $hinhanh['config_value']) !== false) return $hinhanh['config_value'];
-    return '/' . $hinhanh['config_value'];
 }

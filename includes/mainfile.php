@@ -14,7 +14,7 @@ if (!defined('NV_SYSTEM') and !defined('NV_ADMIN') and !defined('NV_WYSIWYG')) {
     exit();
 }
 
-error_reporting(1);
+error_reporting(0);
 
 define('NV_MAINFILE', true);
 
@@ -26,6 +26,7 @@ define('NV_CURRENTTIME', isset($_SERVER['REQUEST_TIME']) ? $_SERVER['REQUEST_TIM
 $db_config = $global_config = $module_config = $client_info = $user_info = $admin_info = $sys_info = $lang_global = $lang_module = $rss = $nv_vertical_menu = $array_mod_title = $content_type = $submenu = $error_info = $countries = $loadScript = $headers = $theme_config = [];
 $page_title = $key_words = $page_url = $canonicalUrl = $prevPage = $nextPage = $mod_title = $editor_password = $my_head = $my_footer = $description = $contents = '';
 $editor = false;
+$isIndexFile = (substr($_SERVER['PHP_SELF'], -9, 9) === 'index.php');
 
 // Ket noi voi cac file constants, config
 require NV_ROOTDIR . '/includes/constants.php';
@@ -134,7 +135,7 @@ if ($global_config['proxy_blocker'] != 0) {
     }
 }
 
-if (defined('NV_SYSTEM')) {
+if (defined('NV_SYSTEM') and $isIndexFile) {
     require NV_ROOTDIR . '/includes/request_uri.php';
 }
 

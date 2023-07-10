@@ -4,7 +4,7 @@
  * NukeViet Content Management System
  * @version 4.x
  * @author VINADES.,JSC <contact@vinades.vn>
- * @copyright (C) 2009-2021 VINADES.,JSC. All rights reserved
+ * @copyright (C) 2009-2022 VINADES.,JSC. All rights reserved
  * @license GNU/GPL version 2 or any later version
  * @see https://github.com/nukeviet The NukeViet CMS GitHub project
  */
@@ -71,9 +71,7 @@ function nv_blocks_content($sitecontent)
     $cache_file = NV_LANG_DATA . '_' . $global_config['module_theme'] . '_' . $module_name . '_' . NV_CACHE_PREFIX . '.cache';
     $blocks = [];
 
-    $cache = $nv_Cache->getItem('themes', $cache_file);
-    $cache = 'a:0:{}';
-    if ($cache !== false) {
+    if (($cache = $nv_Cache->getItem('themes', $cache_file)) !== false) {
         $cache = unserialize($cache);
         if (isset($cache[$module_info['funcs'][$op]['func_id']])) {
             $blocks = $cache[$module_info['funcs'][$op]['func_id']];
@@ -89,6 +87,14 @@ function nv_blocks_content($sitecontent)
             }
         }
 
+        // echo('SELECT t1.*, t2.func_id FROM ' . NV_BLOCKS_TABLE . '_groups t1
+        // INNER JOIN ' . NV_BLOCKS_TABLE . '_weight t2
+        // ON t1.bid = t2.bid
+        // WHERE t2.func_id IN (' . implode(',', $in) . ")
+        // AND t1.theme ='" . $global_config['module_theme'] . "'
+        // AND t1.active!=''
+        // ORDER BY t2.weight ASC");
+        // var_dump($db);die();
         $_result = $db->query('SELECT t1.*, t2.func_id FROM ' . NV_BLOCKS_TABLE . '_groups t1
              INNER JOIN ' . NV_BLOCKS_TABLE . '_weight t2
              ON t1.bid = t2.bid
@@ -446,6 +452,7 @@ function nv_html_meta_tags($html = true)
                 $meta_property['og:image:type'] = $imagesize['mime'];
                 $meta_property['og:image:width'] = $imagesize[0];
                 $meta_property['og:image:height'] = $imagesize[1];
+                $meta_property['og:image:alt'] = $global_config['site_name'];
             }
         }
         $meta_property['og:site_name'] = $global_config['site_name'];
@@ -761,6 +768,10 @@ function nv_html_site_js($html = true, $other_js = [], $language_js = true, $glo
     $jsDef .= ',nv_recaptcha_ver=' . $global_config['recaptcha_ver'];
     $jsDef .= ',nv_recaptcha_sitekey="' . $global_config['recaptcha_sitekey'] . '"';
     $jsDef .= ',nv_recaptcha_type="' . $global_config['recaptcha_type'] . '"';
+
+    !isset($global_config['XSSsanitize']) && $global_config['XSSsanitize'] = 1;
+    $jsDef .= ',XSSsanitize=' . ($global_config['XSSsanitize'] ? 1 : 0);
+
     $jsDef .= ';';
 
     $return = [];
@@ -781,9 +792,21 @@ function nv_html_site_js($html = true, $other_js = [], $language_js = true, $glo
     }
 
     if ($global_js) {
+        if ($global_config['XSSsanitize']) {
+            $return[] = [
+                'ext' => 1,
+                'content' => NV_STATIC_URL . NV_ASSETS_DIR . '/js/DOMPurify/purify.js'
+            ];
+        }
+
         $return[] = [
             'ext' => 1,
             'content' => NV_STATIC_URL . NV_ASSETS_DIR . '/js/global.js'
+        ];
+
+        $return[] = [
+            'ext' => 1,
+            'content' => NV_STATIC_URL . NV_ASSETS_DIR . '/js/site.js'
         ];
     }
 

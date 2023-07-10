@@ -11,7 +11,6 @@
         <link rel="shortcut icon" href="{SITE_FAVICON}">
         <link rel="stylesheet" href="{NV_BASE_SITEURL}themes/default/css/bootstrap.min.css">
         <link rel="stylesheet" href="{NV_BASE_SITEURL}{NV_ASSETS_DIR}/css/font-awesome.min.css">
-        <link rel="stylesheet" href="{NV_BASE_SITEURL}{NV_ASSETS_DIR}/css/custom.css">
         <link rel="stylesheet" href="{NV_BASE_SITEURL}themes/{NV_ADMIN_THEME}/css/style.css">
         <!-- BEGIN: css_module -->
         <link rel="stylesheet" href="{NV_CSS_MODULE_THEME}" type="text/css">
@@ -30,13 +29,16 @@
                  nv_cookie_prefix = '{NV_COOKIE_PREFIX}',
                  nv_check_pass_mstime = '{NV_CHECK_PASS_MSTIME}',
                  nv_safemode = {NV_SAFEMODE},
-                 nv_area_admin = 1;
+                 nv_area_admin = 1,
+                 XSSsanitize = {NV_XSS_SANITIZE};
         </script>
         <script type="text/javascript" src="{NV_BASE_SITEURL}{NV_ASSETS_DIR}/js/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="{NV_BASE_SITEURL}{NV_ASSETS_DIR}/js/language/{NV_LANG_INTERFACE}.js"></script>
         <script type="text/javascript" src="{NV_BASE_SITEURL}{NV_ASSETS_DIR}/js/global.js"></script>
+        <!-- BEGIN: XSSsanitize -->
+        <script type="text/javascript" src="{NV_BASE_SITEURL}{NV_ASSETS_DIR}/js/DOMPurify/purify.js"></script>
+        <!-- END: XSSsanitize -->
         <script type="text/javascript" src="{NV_BASE_SITEURL}{NV_ASSETS_DIR}/js/admin.js"></script>
-        <script type="text/javascript" src="{NV_BASE_SITEURL}{NV_ASSETS_DIR}/js/vhttp.js"></script>
 
         <!-- BEGIN: module_js -->
         <script type="text/javascript" src="{NV_JS_MODULE}"></script>

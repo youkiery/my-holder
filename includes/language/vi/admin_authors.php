@@ -190,6 +190,7 @@ $lang_module['api_roles_allowed'] = 'Các API được phép truy cập';
 $lang_module['api_roles_error_title'] = 'Lỗi: Chưa nhập tên gọi API Role';
 $lang_module['api_roles_error_exists'] = 'Lỗi: Tên gọi API Role này đã có, mời nhập tên gọi khác để tránh nhầm lẫn';
 $lang_module['api_roles_error_role'] = 'Lỗi: Chưa có API nào được chọn';
+$lang_module['api_roles_api_doesnt_exist'] = 'Không nhận diện được API';
 $lang_module['api_roles_checkall'] = 'Chọn tất cả';
 $lang_module['api_roles_uncheckall'] = 'Bỏ chọn tất cả';
 $lang_module['api_roles_detail'] = 'Chi tiết các API của';
@@ -219,6 +220,9 @@ $lang_module['api_cr_back'] = 'Đã sao chép xong';
 $lang_module['api_cr_notice'] = 'Chú ý: Giữ an toàn cho mã bí mật và khóa truy cập đặc biệt là mã bí mật. Nếu mã bí mật và khóa truy cập bị lộ, kẻ phá hoại có thể thực hiện các thao tác không mong muốn';
 $lang_module['api_cr_ips'] = 'IP Truy cập API';
 $lang_module['credential_ips_help'] = 'Nhập mỗi IP một dòng, truy vấn từ các IP này được phép thực hiện';
+$lang_module['api_cr_auth_method'] = 'Phương thức xác thực';
+$lang_module['api_cr_auth_method_password_verify'] = 'password_verify (khuyên dùng)';
+$lang_module['api_cr_auth_method_none'] = 'Không xác thực, dùng trong việc phát triển';
 
 $lang_module['api_System'] = 'Các chức năng hệ thống';
 $lang_module['api_System_SendMail'] = 'Gửi email';
