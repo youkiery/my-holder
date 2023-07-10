@@ -1,35 +1,34 @@
 <!-- BEGIN: main -->
 </div>
 <div class="footer">
-  <div class="col-xs-4">
-    <a href="/">
+  <a href="/">
+    <div class="col-xs-4">
       <div class="fa fa-home"></div>
       <div> Home </div>
-    </a>
-  </div>
+    </div>
+  </a>
   <div class="col-xs-5" onclick="dangbaotri()">
     <div class="fa fa-shopping-bag"></div>
     <div> Cửa hàng </div>
   </div>
-  <div class="col-xs-6">
-    <a href="/khachhang/datlich">
+  <a href="/khachhang/datlich">
+    <div class="col-xs-6">
       <div class="footer-button">
         <div class="fa fa-calendar"></div>
         <div> Đặt lịch </div>
       </div>
-    </a>
-  </div>
+    </div>
+  </a>
   <div class="col-xs-5" onclick="dangbaotri()">
     <div class="fa fa-newspaper-o"></div>
     <div> Tin tức </div>
   </div>
-  <div class="col-xs-4">
-    <a href="/users/login">
+  <a href="/users/login">
+    <div class="col-xs-4">
       <div class="fa fa-user"></div>
-    <div> Tài khoản </div>
-    </a>
-  </div>
-</div>
+      <div> Tài khoản </div>
+    </div>
+  </a>
 </div>
 
 <script>

@@ -11,7 +11,7 @@ if (!defined('NV_IS_FORM')) {
 	die('Stop!!!');
 }
 
-$xtpl = new XTemplate("main.tpl", PATH .'/datlich/');
+$xtpl = new XTemplate("main.tpl", PATH .'/taikhoan/');
 $xtpl->assign("header", chenheader());
 $xtpl->assign("footer", chenfooter());
 $xtpl->assign("ngaymai", date('d/m/Y 07:00', time() + 60 * 60 * 24));
