@@ -2449,13 +2449,3 @@ button.close {
     border: 0;
     font-size: 24px;
 }
-
-  @media print {
-    #printable {
-      display: block;
-    }
-
-    .nonprintable {
-      display: none;
-    }
-  }

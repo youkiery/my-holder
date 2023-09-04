@@ -18,6 +18,7 @@
             "url": "{NV_MY_DOMAIN}",
             "logo": "{NV_MY_DOMAIN}{LOGO_SRC}"
         }
+        
         </script>
     </head>
     <body>

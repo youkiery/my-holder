@@ -174,6 +174,14 @@ function nv_site_theme($contents, $full = true)
         'rel' => 'stylesheet',
         'href' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/css/custom.css'
     ];
+    $html_links[] = [
+        'rel' => 'stylesheet',
+        'href' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/css/jquery-ui.css'
+    ];
+    $html_links[] = [
+        'rel' => 'stylesheet',
+        'href' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/css/jquery.datetimepicker.min.css'
+    ];
 
     // Customs Style
     if (isset($module_config['themes'][$global_config['module_theme']]) and !empty($module_config['themes'][$global_config['module_theme']])) {
@@ -240,11 +248,51 @@ function nv_site_theme($contents, $full = true)
     $html_js = nv_html_site_js(false);
     $html_js[] = [
         'ext' => 1,
+        'content' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/js/jquery-ui.js'
+    ];
+    $html_js[] = [
+        'ext' => 1,
+        'content' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/js/Chart.js'
+    ];
+    $html_js[] = [
+        'ext' => 1,
+        'content' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/js/vremind.js'
+    ];
+    $html_js[] = [
+        'ext' => 1,
+        'content' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/js/holder.min.js'
+    ];
+    $html_js[] = [
+        'ext' => 1,
         'content' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/js/main.js'
     ];
     $html_js[] = [
         'ext' => 1,
         'content' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/js/custom.js'
+    ];
+    $html_js[] = [
+        'ext' => 1,
+        'content' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/js/vhttp.js'
+    ];
+    $html_js[] = [
+        'ext' => 1,
+        'content' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/js/vimage.js'
+    ];
+    $html_js[] = [
+        'ext' => 1,
+        'content' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/js/vnumber.js'
+    ];
+    $html_js[] = [
+        'ext' => 1,
+        'content' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/js/firebase-app.js'
+    ];
+    $html_js[] = [
+        'ext' => 1,
+        'content' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/js/firebase-storage.js'
+    ];
+    $html_js[] = [
+        'ext' => 1,
+        'content' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/js/jquery.datetimepicker.full.min.js'
     ];
 
     foreach ($html_js as $js) {
