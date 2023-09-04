@@ -7,6 +7,6 @@
  * @Createdate 21-03-2019 13:15
  */
 
-if (!defined('PREFIX')) {
+if (!defined('NV_SYSTEM')) {
   die('Stop!!!');
 }

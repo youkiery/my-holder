@@ -136,33 +136,18 @@ function nv_site_theme($contents, $full = true)
         'rel' => 'stylesheet',
         'href' => NV_STATIC_URL . NV_ASSETS_DIR . '/css/font-awesome.min.css'
     ];
-    if ($global_config['current_theme_type'] == 'r') {
-        $html_links[] = [
-            'rel' => 'stylesheet',
-            'href' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/css/bootstrap.min.css'
-        ];
-        $html_links[] = [
-            'rel' => 'stylesheet',
-            'href' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/css/style.css'
-        ];
-        $html_links[] = [
-            'rel' => 'stylesheet',
-            'href' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/css/style.responsive.css'
-        ];
-    } else {
-        $html_links[] = [
-            'rel' => 'stylesheet',
-            'href' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/css/bootstrap.non-responsive.css'
-        ];
-        $html_links[] = [
-            'rel' => 'stylesheet',
-            'href' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/css/style.css'
-        ];
-        $html_links[] = [
-            'rel' => 'stylesheet',
-            'href' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/css/style.non-responsive.css'
-        ];
-    }
+    $html_links[] = [
+        'rel' => 'stylesheet',
+        'href' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/css/bootstrap.min.css'
+    ];
+    $html_links[] = [
+        'rel' => 'stylesheet',
+        'href' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/css/style.css'
+    ];
+    $html_links[] = [
+        'rel' => 'stylesheet',
+        'href' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/css/style.responsive.css'
+    ];
     if (defined('NV_IS_ADMIN') and $full) {
         $html_links[] = [
             'rel' => 'stylesheet',
@@ -177,10 +162,6 @@ function nv_site_theme($contents, $full = true)
     $html_links[] = [
         'rel' => 'stylesheet',
         'href' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/css/jquery-ui.css'
-    ];
-    $html_links[] = [
-        'rel' => 'stylesheet',
-        'href' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/css/jquery.datetimepicker.min.css'
     ];
 
     // Customs Style
@@ -252,14 +233,6 @@ function nv_site_theme($contents, $full = true)
     ];
     $html_js[] = [
         'ext' => 1,
-        'content' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/js/Chart.js'
-    ];
-    $html_js[] = [
-        'ext' => 1,
-        'content' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/js/vremind.js'
-    ];
-    $html_js[] = [
-        'ext' => 1,
         'content' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/js/holder.min.js'
     ];
     $html_js[] = [
@@ -268,31 +241,7 @@ function nv_site_theme($contents, $full = true)
     ];
     $html_js[] = [
         'ext' => 1,
-        'content' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/js/custom.js'
-    ];
-    $html_js[] = [
-        'ext' => 1,
         'content' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/js/vhttp.js'
-    ];
-    $html_js[] = [
-        'ext' => 1,
-        'content' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/js/vimage.js'
-    ];
-    $html_js[] = [
-        'ext' => 1,
-        'content' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/js/vnumber.js'
-    ];
-    $html_js[] = [
-        'ext' => 1,
-        'content' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/js/firebase-app.js'
-    ];
-    $html_js[] = [
-        'ext' => 1,
-        'content' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/js/firebase-storage.js'
-    ];
-    $html_js[] = [
-        'ext' => 1,
-        'content' => NV_STATIC_URL . 'themes/' . $global_config['module_theme'] . '/js/jquery.datetimepicker.full.min.js'
     ];
 
     foreach ($html_js as $js) {

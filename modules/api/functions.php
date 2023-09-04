@@ -12,3 +12,7 @@ if (!defined('NV_SYSTEM')) {
 }
 
 define('NV_IS_API', true); 
+
+function duongdan($thumuc = "") {
+  return NV_ROOTDIR ."/modules/api/template/$thumuc";
+}

@@ -7,14 +7,14 @@
  * @Createdate 21-03-2019 13:15
  */
 
-if (!defined('NV_ADMIN') or !defined('NV_MAINFILE')) {
+ if (!defined('NV_ADMIN') or !defined('NV_MAINFILE')) {
   die('Stop!!!');
 }
 
 $module_version = array(
     'name' => 'API',
-    'modfuncs' => '',
-    'submenu' => '',
+    'modfuncs' => 'main',
+    'submenu' => 'main',
     'is_sysmod' => 1,
     'virtual' => 1,
     'version' => '4.3.04',

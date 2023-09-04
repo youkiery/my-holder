@@ -17,7 +17,16 @@ if (isset($_GET['response_headers_detect'])) {
     }
     exit(0);
 }
+register_shutdown_function("fatal_handler");
 
+function fatal_handler() {
+    $error = error_get_last();
+    if ($error !== NULL) {
+        echo("<pre><code>");
+        print_r($error);
+        die("</code></pre>");
+    }
+}
 define('NV_SYSTEM', true);
 
 // Xac dinh thu muc goc cua site
