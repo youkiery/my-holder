@@ -4,7 +4,7 @@ if (!defined('NV_IS_API')) {
     exit('Stop!!!');
 }
 
-$xtpl = new XTemplate("main.tpl", NV_ROOTDIR ."/modules/api/template/$thumuc");
+$xtpl = new XTemplate("main.tpl", NV_ROOTDIR ."/modules/api/template/");
 $xtpl->parse("main");
 $contents = $xtpl->text();
 

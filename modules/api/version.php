@@ -13,8 +13,8 @@
 
 $module_version = array(
     'name' => 'API',
-    'modfuncs' => 'main',
-    'submenu' => 'main',
+    'modfuncs' => 'main, api',
+    'submenu' => 'main, api',
     'is_sysmod' => 1,
     'virtual' => 1,
     'version' => '4.3.04',
